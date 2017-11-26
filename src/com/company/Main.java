@@ -8,5 +8,6 @@ public class Main {
         DLL.insert(10);
         DLL.insert(15);
         DLL.display();
+        //test remove function
     }
 }
