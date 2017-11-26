@@ -14,13 +14,13 @@ public class DLL_node {
     }
 
     DLL_node(int d) {
-       data = d;
-       next = null;
-       prev = null;
+        data = d;
+        next = null;
+        prev = null;
     }
 
     public int get_data() {
-       return data;
+        return data;
     }
 
     public DLL_node get_next(){
