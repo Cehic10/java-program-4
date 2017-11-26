@@ -40,7 +40,7 @@ public class Doubly_LL {
 
     //display function for the entire list
     public void display() {
-        System.out.print("\nThe doubly linked list =");
+        System.out.print("\nThe doubly linked list = ");
         if (head == null) {
             System.out.print("empty\n");
             return;
@@ -55,9 +55,15 @@ public class Doubly_LL {
             return;
         }
 
-        System.out.println(current.data);
-        System.out.println(", ");
+        System.out.print(current.data);
+        System.out.print(", ");
         display_rec(current.next);
+    }
+
+    //removes a given data
+    public boolean remove(int to_remove){
+        return true;
+
     }
 }
 
