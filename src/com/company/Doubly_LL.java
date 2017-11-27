@@ -62,8 +62,31 @@ public class Doubly_LL {
 
     //removes a given data
     public boolean remove(int to_remove){
-        return true;
+        return remove_rec(head, to_remove);
+    }
 
+    private boolean remove_rec(DLL_node head, int to_remove){
+        //base case
+        if (head.data == to_remove) {
+            head.prev.next = head.next;
+            head.next.prev = head.prev;
+            return true;
+        }
+
+        return remove_rec(head.next, to_remove);
+    }
+
+    //recursive remove_all
+    public void remove_all(){
+        remove_all_rec(head);
+    }
+
+    private void remove_all_rec(DLL_node head){
+        if (head == null){
+            return;
+        }
+        remove_all_rec(head.next);
+        head = null;
     }
 }
 
