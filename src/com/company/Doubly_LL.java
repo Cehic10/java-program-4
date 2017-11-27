@@ -25,7 +25,7 @@ public class Doubly_LL {
 
         //insert into the head of the list
         //special case if head is null
-        if (head == null){
+        if (is_empty()){
             head = to_insert;
         }
 
@@ -41,7 +41,7 @@ public class Doubly_LL {
     //display function for the entire list
     public void display() {
         System.out.print("\nThe doubly linked list = ");
-        if (head == null) {
+        if (is_empty()) {
             System.out.print("empty\n");
             return;
         }
@@ -62,31 +62,40 @@ public class Doubly_LL {
 
     //removes a given data
     public boolean remove(int to_remove){
-        return remove_rec(head, to_remove);
+        head = remove(head, to_remove);
+        return true;
     }
 
-    private boolean remove_rec(DLL_node head, int to_remove){
+    private DLL_node remove(DLL_node head, int to_remove){
         //base case
-        if (head.data == to_remove) {
-            head.prev.next = head.next;
-            head.next.prev = head.prev;
-            return true;
-        }
-
-        return remove_rec(head.next, to_remove);
-    }
-
-    //recursive remove_all
-    public void remove_all(){
-        remove_all_rec(head);
-    }
-
-    private void remove_all_rec(DLL_node head){
         if (head == null){
-            return;
+            return head;
         }
-        remove_all_rec(head.next);
+
+        if (head.get_data() == to_remove){
+            //delete the node
+            if (head == tail)
+            {
+               tail = head.get_prev();
+               size_of_list--;
+               return null;
+            }
+            else {
+                head = head.get_next();
+                size_of_list--;
+                return head;
+            }
+        }
+
+        //regular case
+        head.set_next(remove(head.get_next(), to_remove));
+        return head;
+    }
+
+
+    public void remove_all(){
         head = null;
+        tail = null;
     }
 }
 

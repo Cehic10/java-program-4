@@ -30,6 +30,10 @@ public class Main {
                 case 3:
                     DLL.display();
                     break;
+                case 4 :
+                    DLL.remove_all();
+                    DLL.display();
+                    break;
                 default:
                     System.out.println("ERROR: Wrong entry.\n");
                     break;
