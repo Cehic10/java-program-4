@@ -1,5 +1,10 @@
 package com.company;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
+import java.io.*;
+import java.io.IOException;
+
 
 public class Main {
 
@@ -9,6 +14,21 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Doubly_LL DLL = new Doubly_LL();
         Order ord = new Order();
+        //********************
+        //File opening
+        try {
+            Path file_to_open = Paths.get("Details.txt");
+            Scanner input_file = new Scanner(file_to_open);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+
+
+
+
+
+        //*************
 
         System.out.println("This is going to be program #4 in CS202.");
 
