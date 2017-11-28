@@ -10,14 +10,15 @@ public class Entree extends Food{
         price = 0.0;
     }
 
-    Entree(String name_to_set, float price_to_set){
+    Entree(String name_to_set, double price_to_set){
         name_of_dish = name_to_set;
         price = price_to_set;
     }
 
     void display(){
-        System.out.println("Food Type: Entree");//maybe use printf
-        System.out.println("Food name:"); //name_of_dish
+        System.out.println("\nFood Type: Entree");//maybe use printf
+        System.out.printf("Food name: %s\n", name_of_dish);
+        System.out.printf("Price: %.2f\n", price);
     }
 }
 

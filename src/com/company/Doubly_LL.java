@@ -18,10 +18,10 @@ public class Doubly_LL {
     }
 
     //insert function that inserts at the beginning of the list
-    public boolean insert(int data_to_insert){
+    public boolean insert(Order data_to_insert){
         //create a new node
         DLL_node to_insert = new DLL_node();
-        to_insert.set_data(data_to_insert);
+        to_insert.copy(data_to_insert);
 
         //insert into the head of the list
         //special case if head is null
@@ -55,24 +55,24 @@ public class Doubly_LL {
             return;
         }
 
-        System.out.print(current.data);
-        System.out.print(", ");
+        current.display();
+        System.out.println("\n");
         display_rec(current.next);
     }
 
     //removes a given data
-    public boolean remove(int to_remove){
+    public boolean remove(String to_remove){
         head = remove(head, to_remove);
         return true;
     }
 
-    private DLL_node remove(DLL_node head, int to_remove){
+    private DLL_node remove(DLL_node head, String to_remove){
         //base case
         if (head == null){
             return head;
         }
 
-        if (head.get_data() == to_remove){
+        if (head.name_of_orderer == to_remove){
             //delete the node
             if (head == tail)
             {
