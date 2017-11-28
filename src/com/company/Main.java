@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args){
         String name;
         int choice;
-        Order ord = new Order();
         Scanner scan = new Scanner(System.in);
         Doubly_LL DLL = new Doubly_LL();
+        Order ord = new Order();
 
         System.out.println("This is going to be program #4 in CS202.");
 
@@ -38,7 +38,10 @@ public class Main {
         price = 4.95;
         Food ent = new Entree(food_name, price);
         ord.insert(ent);
-        ord.display();
+        Food ent2 = new Entree("Hot Dog", 6.95);
+        ord.insert(ent2);
+        DLL.insert(ord);
+        DLL.display();
 
 
 
