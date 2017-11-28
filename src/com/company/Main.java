@@ -1,37 +1,36 @@
 package com.company;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.*;
-import java.io.IOException;
 
 
 public class Main {
 
-    public static void main(String[] args){
-        String name;
+    public static void main(String[] args) throws FileNotFoundException {
+        //declaring variables
+        final String FILE_NAME = "details.txt";
+        final int MAX_NUM_OF_RESTAURANTS = 5;
+        int restaurants_inserted = 0;
+        String orderer_name;
         int choice;
         Scanner scan = new Scanner(System.in);
         Doubly_LL DLL = new Doubly_LL();
         Order ord = new Order();
         //********************
         //File opening
-        try {
-            Path file_to_open = Paths.get("Details.txt");
-            Scanner input_file = new Scanner(file_to_open);
-        } catch (IOException e){
-            e.printStackTrace();
+        Scanner read = new Scanner(new File(FILE_NAME));
+        read.useDelimiter(",");
+
+        String [] restaurants = new String[MAX_NUM_OF_RESTAURANTS];
+        while (read.hasNext()){
+            restaurants[restaurants_inserted] = read.next();
+            restaurants_inserted++;
         }
 
 
 
-
-
-
-        //*************
-
-        System.out.println("This is going to be program #4 in CS202.");
-
+        //******************
+        //Get restaurant name for order
         System.out.println("Would you like to order from McDonalds or Wendy's? (1) or (2):");
         choice = scan.nextInt();
         switch (choice){
@@ -46,22 +45,14 @@ public class Main {
                 break;
         }
 
+        //get the name of the person
         System.out.println("What is your name?");
-        name = scan.nextLine();
-        ord.set_orderer_name(name);
+        scan.nextLine();
+        orderer_name = scan.nextLine();
+        System.out.printf("Your name is %s", orderer_name);
 
-        String food_name;
-        double price;
 
-        System.out.println("Would food would you like to order? Insert a string: ");
-        food_name = scan.nextLine();
-        price = 4.95;
-        Food ent = new Entree(food_name, price);
-        ord.insert(ent);
-        Food ent2 = new Entree("Hot Dog", 6.95);
-        ord.insert(ent2);
-        DLL.insert(ord);
-        DLL.display();
+
 
 
 
