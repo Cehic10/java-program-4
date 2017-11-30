@@ -1,3 +1,10 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 11/28/17
+//File Name: DLL_node.java
+//Purpose:
+//This file contains the declaration and implementation of the Doubly linked list's node class, which extends the Order class
+//****************************************************************
 package com.company;
 
 public class DLL_node extends Order {

@@ -1,3 +1,11 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 11/28/17
+//File Name: Order.java
+//Purpose:
+//This file contains the declaration and implementation of the Order class, which is designed
+//to store information about the person's order and contains an array of Food items
+//********************************************************************************************
 package com.company;
 
 public class Order {

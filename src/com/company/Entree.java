@@ -1,3 +1,11 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 11/28/17
+//File Name: Entree.java
+//Purpose:
+//This file contains the declaration and implementation of the Entree class, which extends the Food class and contains
+//the information for storing the entree data
+//****************************************************************
 package com.company;
 
 public class Entree extends Food{

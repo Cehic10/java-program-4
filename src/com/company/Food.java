@@ -1,3 +1,11 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 11/28/17
+//File Name: Food.java
+//Purpose:
+//This file contains the declaration and implementation of the Food class, which is an abstract base class
+//that will have multiple food items underneath it.
+//********************************************************************************************
 package com.company;
 
 public abstract class Food {
@@ -12,6 +20,4 @@ public abstract class Food {
     }
 
     abstract void display();
-    //abstract boolean compare();
-    //abstract ????
 }

@@ -1,3 +1,10 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 11/28/17
+//File Name: Doubly_LL.java
+//Purpose:
+//This file contains the declaration and implementation of the Doubly linked list class
+//****************************************************************
 package com.company;
 
 public class Doubly_LL {
@@ -40,7 +47,6 @@ public class Doubly_LL {
 
     //display function for the entire list
     public void display() {
-        System.out.print("\nThe doubly linked list = ");
         if (is_empty()) {
             System.out.print("empty\n");
             return;
