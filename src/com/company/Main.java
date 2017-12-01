@@ -90,7 +90,7 @@ public class Main {
                 }
             }
 
-            System.out.printf("\nWhat would you like to order from here? %s ($%f) (Option 1), %s ($%f) (Option 2), %s ($%f) (Option 3)", menu_items[0], menu_prices[0], menu_items[1], menu_prices[1], menu_items[2], menu_prices[2]);
+            System.out.printf("\nWhat would you like to order from here? %s ($%.2f) (Option 1), %s ($%.2f) (Option 2), %s ($%.2f) (Option 3)", menu_items[0], menu_prices[0], menu_items[1], menu_prices[1], menu_items[2], menu_prices[2]);
             System.out.print("\nPlease choose an option: ");
             choice = scan.nextInt();
             Food food_to_order;
