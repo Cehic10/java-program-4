@@ -8,9 +8,9 @@
 //********************************************************************************************
 package com.company;
 
-public class Balanced_Tree {
+public class Balanced_Tree<Type extends executable> {
     //fields
-    BST_node root;
+    BST_node<Type> root;
 
     //members
     //function that retrieves the height of the node
@@ -70,21 +70,21 @@ public class Balanced_Tree {
     }
 
     //wrapper function for insertion using recursion
-    public boolean insert(int data){
+    public boolean insert(Type data){
         root = insert(root, data);
         return true;
     }
 
     //function to perform insertion and balancing of tree
-    private BST_node insert(BST_node node, int data) {
+    private BST_node insert(BST_node node, Type data) {
 
         //normal BST insertion
         if (node == null)
             return (new BST_node(data));
 
-        if (data < node.get_data())
+        if (data.get_data() < node.get_data().get_data())
             node.set_left(insert(node.get_left(), data));
-        else if (data > node.get_data())
+        else if (data.get_data() > node.get_data().get_data())
             node.set_right(insert(node.get_right(), data));
         else //this ensures that there are no duplicate nodes
             return node;
@@ -99,21 +99,21 @@ public class Balanced_Tree {
         // If this node becomes unbalanced, then there are 4 cases to deal with
 
         // Left Left Case
-        if (balance > 1 && data < node.get_left().get_data())
+        if (balance > 1 && data.get_data() < node.get_left().get_data().get_data())
             return right_rotate(node);
 
         // Right Right Case
-        if (balance < -1 && data > node.get_right().get_data())
+        if (balance < -1 && data.get_data() > node.get_right().get_data().get_data())
             return left_rotate(node);
 
         // Left Right Case
-        if (balance > 1 && data > node.get_left().get_data()) {
+        if (balance > 1 && data.get_data() > node.get_left().get_data().get_data()) {
             node.set_left(left_rotate(node.get_left()));
             return right_rotate(node);
         }
 
         // Right Left Case
-        if (balance < -1 && data < node.get_right().get_data()) {
+        if (balance < -1 && data.get_data() < node.get_right().get_data().get_data()) {
             node.set_right(right_rotate(node.get_right()));
             return left_rotate(node);
         }
@@ -132,7 +132,7 @@ public class Balanced_Tree {
         if (root == null)
             return;
         display_all(root.get_left());
-        System.out.print(root.get_data() + " ");
+        root.get_data().display();
         display_all(root.get_right());
     }
 
@@ -145,9 +145,9 @@ public class Balanced_Tree {
         if (root == null)
             return false;
         else{
-            if (root.get_data() == to_retrieve)
+            if (root.get_data().get_data() == to_retrieve)
                 return true;
-            else if (root.get_data() > to_retrieve)
+            else if (root.get_data().get_data() > to_retrieve)
                 return retrieve(root.get_left(), to_retrieve);
             else
                 return retrieve(root.get_right(), to_retrieve);
@@ -160,6 +160,4 @@ public class Balanced_Tree {
     public void remove_all() {
         root = null;
     }
-
-
 }
