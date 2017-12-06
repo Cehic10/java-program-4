@@ -17,7 +17,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        //declaring variables
+        Balanced_Tree bst = new Balanced_Tree();
+        bst.insert(10);
+        bst.insert(20);
+        bst.insert(30);
+        bst.insert(40);
+        bst.insert(50);
+        bst.insert(25);
+
+
+        /*//declaring variables
         final String RESTAURANT_FILE_NAME = "restaurants.txt";
         final String MENU_FILE_NAME = "menu";
         final int MAX_NUM_OF_RESTAURANTS = 3;
@@ -123,7 +132,7 @@ public class Main {
         DLL.display();
 
 
-
+        */
 
 
 
