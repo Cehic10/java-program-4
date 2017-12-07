@@ -22,7 +22,6 @@ public class Main {
         final String MENU_FILE_NAME = "menu";
         final int MAX_NUM_OF_RESTAURANTS = 3;
         final int MAX_NUM_OF_MENU_ITEMS = 3;
-        int restaurants_inserted = 0;
         String orderer_name;
         int choice;
         char answer;
@@ -33,6 +32,7 @@ public class Main {
         System.out.println("Welcome to JavaEats, the revolutionary new way to order your food!");
 
         do {
+            int restaurants_inserted = 0;
             //get the name of the person
             System.out.println("What is your name?");
             orderer_name = scan.nextLine();
@@ -114,55 +114,26 @@ public class Main {
             }
 
             DLL.insert(ord);
-            System.out.println("Would you like to make another order?");
+            System.out.println("Would you like to make another order? (y/n)");
             scan.nextLine();
             answer = scan.next().charAt(0);
-        } while (answer == 'Y' || answer ==  'y');
+        } while (answer == 'Y' || answer == 'y');
 
         System.out.println("Your order details are: ");
         DLL.display();
 
-        System.out.println("\nFinding nearest driver...");
-
-        Balanced_Tree BST = new Balanced_Tree<Driver>();
-        BST.insert(new Driver(15, "Pedro"));
-        BST.display_all();
+        System.out.println("Finding nearest driver...");
 
 
-
-
-
-
-
-        /*do {
-            System.out.println("\nDLL Operations choice\n");
-            System.out.println("1. Insert");
-            System.out.println("2. Remove");
-            System.out.println("3. Display All");
-
-            choice = scan.nextInt();
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter an int to insert: ");
-                    DLL.insert(scan.nextInt());
-                    break;
-                case 2:
-                    System.out.println("Enter an int to remove: ");
-                    DLL.remove(scan.nextInt());
-                    break;
-                case 3:
-                    DLL.display();
-                    break;
-                case 4 :
-                    DLL.remove_all();
-                    DLL.display();
-                    break;
-                default:
-                    System.out.println("ERROR: Wrong entry.\n");
-                    break;
-            }
-            System.out.println("\nWould you like to go again? Y/N: ");
-            ch = scan.next().charAt(0);
-        } while (ch == 'Y' || ch == 'y');*/
+        Balanced_Tree restaurant_tree = new Balanced_Tree<Driver>();
+        restaurant_tree.insert(new Driver(15, "Alfred"));
+        restaurant_tree.insert(new Driver(5, "George"));
+        restaurant_tree.insert(new Driver(2, "Matt"));
+        restaurant_tree.insert(new Driver(7, "Bob"));
+        System.out.print("The closest driver is ");
+        restaurant_tree.retrieve_lowest().get_data().display();
+        System.out.print(" and he will be there shortly!\n");
+        System.out.print("Thank you for your business! Come again!\n");
     }
 }
+

@@ -1,3 +1,11 @@
+//******************************
+//Name: Adrian Bernat
+//Date: 12/06/17
+//File Name: Driver.java
+//Purpose:
+//This file contains the definition and implementation of the Driver class. This stores the data
+//for the driver and allows for easy encapsulation inside of templates.
+//********************************************************************************************
 package com.company;
 
 public class Driver implements executable {
@@ -33,6 +41,6 @@ public class Driver implements executable {
     }
 
     public void display(){
-        System.out.print(name_of_driver + " (" + distance_from_restaurant + ") ||");
+        System.out.print(name_of_driver + " (" + distance_from_restaurant + " miles away) ");
     }
 }

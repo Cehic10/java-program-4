@@ -8,7 +8,7 @@
 //********************************************************************************************
 package com.company;
 
-public class Balanced_Tree<Type extends executable> {
+public class Balanced_Tree<Type extends executable> implements executable {
     //fields
     BST_node<Type> root;
 
@@ -133,6 +133,7 @@ public class Balanced_Tree<Type extends executable> {
             return;
         display_all(root.get_left());
         root.get_data().display();
+        System.out.print("||");
         display_all(root.get_right());
     }
 
@@ -159,5 +160,28 @@ public class Balanced_Tree<Type extends executable> {
     //we only need to set the root to null
     public void remove_all() {
         root = null;
+    }
+
+    public BST_node retrieve_lowest(){
+        return retrieve_lowest(root);
+    }
+
+    private BST_node retrieve_lowest(BST_node root){
+        if (root.left_child == null)
+            return root;
+
+        return retrieve_lowest(root.get_left());
+    }
+
+    public int get_data(){
+        return root.get_data().get_data();
+    }
+
+    public void display(){
+        display_all();
+    }
+
+    public String get_name(){
+        return get_name();
     }
 }

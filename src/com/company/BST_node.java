@@ -36,6 +36,10 @@ public class BST_node<Type extends executable> {
         return data;
     }
 
+    public String get_name(){
+       return data.get_name();
+    }
+
     public int get_height(){
         return height;
     }
